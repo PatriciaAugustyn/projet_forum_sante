@@ -3,7 +3,7 @@ import csv
 from fleiss import fleissKappa
 
 # Define the full path to the CSV file
-csv_file_path = "/home/miya/OneDrive_solomia/Документи/Навчання/2 semestre/Enrichissement de corpus/annotation_sante_niv_3.csv"
+csv_file_path = "/home/miya/OneDrive_solomia/Документи/Навчання/2 semestre/Enrichissement de corpus/annotation_sante_niv3_500.csv"
 
 # Initialize a list to store the transformed data
 transformed_data = []
