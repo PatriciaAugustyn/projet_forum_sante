@@ -38,6 +38,10 @@ resultats = pd.DataFrame({
     "Kappa de Cohen": [kappa_lise_solomiia, kappa_lise_patricia, kappa_solomiia_patricia]
 })
 
+print("kappa_lise_solomiia : ", kappa_lise_solomiia)
+print("kappa_lise_patricia : ", kappa_lise_patricia)
+print("kappa_solomiia_patricia : ", kappa_solomiia_patricia)
+
 # On définit les couleurs pour chaque annotateur
 colors = ["thistle", "peachpuff", "skyblue"]
 
