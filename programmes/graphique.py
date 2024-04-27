@@ -8,7 +8,14 @@ Ce script montre la distribution des étiquettes annotées par nous :
 
 
 Pour lancer ce script, vous devez seulement copier cette ligne de commande :
-python3 graphique.py
+    - python3 graphique.py
+    
+Pensez à installer les librairies (dans un environnement virtuel)
+avec les commandes : 
+    - pip install numpy
+    - pip install pandas
+    - pip install matplotlib
+
 """
 
 import pandas as pd
@@ -16,7 +23,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # On va lire nos 3 fichiers avec nos 3 annotations
-file_paths = ["../annotation/lise.csv", "../annotation/solomiia.csv", "../annotation/patricia.csv"]
+file_paths = ["../datas/1000_annotation_finale.csv"]
 annotations = []
 
 # On parcourt chaque fichier CSV --> liste de dataframes dans notre liste avec chacune de nos annotations
@@ -29,11 +36,11 @@ for annotator_index, annotator_df in enumerate(annotations):
     for index, row in annotator_df.iterrows():
 
         # On va joindre les niveaux en une seule chaîne séparée par une pipe
-        annotation = "|".join([str(row['Niveau-1']), str(row['Niveau-2']),
-                               str(row['Niveau-3']), str(row['Niveau-3-1'])]) # Le nom de nos colonnes
+        annotation = "|".join([str(row['niveau1']), str(row['niveau2']),
+                               str(row['niveau3_1']), str(row['niveau3_2'])]) # Le nom de nos colonnes
 
         # On ajoute les informations de l'annotateur, de la phrase et de l'annotation à la liste
-        annotator.append((annotator_index, row['Sentence'], annotation))
+        annotator.append((annotator_index, row['ID'], annotation))
 
     annotate.extend(annotator)  # O n étend la liste  avec les annotations de cet annotateur
 
@@ -64,7 +71,7 @@ plt.title("Distribution des étiquettes")
 plt.tight_layout()
 
 # On enregistre l'image dans notre dossier graphiques
-plt.savefig("../graphiques/distribution_etiquette.png")
+plt.savefig("../graphiques/distribution_etiquette_finale.png")
 
 plt.show()
 
