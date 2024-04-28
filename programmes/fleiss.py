@@ -3,8 +3,6 @@
 def checkInput(rate, n):
     """ 
     Check correctness of the input matrix
-    @param rate - ratings matrix
-    @return n - number of raters
     @throws AssertionError 
     """
     N = len(rate)
@@ -26,18 +24,18 @@ def fleissKappa(rate,n):
     k = len(rate[0])
     print("#raters = ", n, ", #subjects = ", N, ", #categories = ", k)
     checkInput(rate, n)
-
-    #mean of the extent to which raters agree for the ith subject 
-    PA = sum([(sum([i**2 for i in row])- n) / (n * (n - 1)) for row in rate])/N
-    print("PA = ", PA)
     
     # mean of squares of proportion of all assignments which were to jth category
     PE = sum([j**2 for j in [sum([rows[i] for rows in rate])/(N*n) for i in range(k)]])
     print("PE =", PE)
     
+    #mean of the extent to which raters agree for the ith subject 
+    PO = sum([(sum([i**2 for i in row])- n) / (n * (n - 1)) for row in rate])/N
+    print("PO = ", PO)
+    
     kappa = -float("inf")
     try:
-        kappa = (PA - PE) / (1 - PE)
+        kappa = (PO - PE) / (1 - PE)
         kappa = float("{:.3f}".format(kappa))
     except ZeroDivisionError:
         print("Expected agreement = 1")

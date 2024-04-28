@@ -3,7 +3,7 @@ import csv
 from fleiss import fleissKappa
 
 # Define the full path to the CSV file
-csv_file_path = "/home/miya/OneDrive_solomia/Документи/Навчання/2 semestre/Enrichissement de corpus/annotation_sante_niv2_500.csv"
+csv_file_path = "/home/miya/OneDrive_solomia/Документи/Навчання/2 semestre/Enrichissement de corpus/annotation_sante_niv2_1000.csv"
 
 # Initialize a list to store the transformed data
 transformed_data = []
@@ -33,4 +33,5 @@ with open(csv_file_path, newline='') as csvfile:
 
 # Call the fleissKappa function with the transformed data and the number of raters
 result = fleissKappa(transformed_data, 3)
+#print(transformed_data)
 print(result)
