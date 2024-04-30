@@ -1,4 +1,11 @@
 #fleiss_kappa_niv3_500.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+
+@author: Solomiia Korol
+"""
+
 import csv
 from fleiss import fleissKappa
 

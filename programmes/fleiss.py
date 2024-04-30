@@ -1,5 +1,13 @@
 #fleiss.py
 
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+
+@author: Solomiia Korol
+based on the code of @Shamya on GitHub
+"""
+
 def checkInput(rate, n):
     """ 
     Check correctness of the input matrix
